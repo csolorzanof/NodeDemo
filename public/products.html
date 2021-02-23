@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1>Products</h1>
+  <div id="Content"></div>
+  <button onclick="LoadContent()">Load Content</button>
+
+  <script>
+    function LoadContent(){
+      fetch("http://localhost:3000/users")
+      .then(resp => resp.text()).then(data => {
+        var contDiv = document.getElementById("Content");
+        contDiv.innerHTML = data;
+      });
+      
+    }
+  </script>
+</body>
+
+</html>
